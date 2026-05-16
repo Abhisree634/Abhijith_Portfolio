@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob:; font-src * data:;">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+          <!-- Added the id="hero-bg" here -->
+    <div class="hero-wrapper" id="hero-bg">
+        <nav>
+            <div class="nav__content">
+                <div class="logo"><a href="index.html">Abhijith K S</a></div>
+                <ul class="nav__links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>   
+           </div>
+        </nav>
+
+        <section class="section">
+            <div class="section__container">
+                <div class="content">
+                    <p class="subtitle">WELCOME</p>
+                    <h1 class="title">I'm <span>Abhijith K S</span></h1>
+                    <p class="description">
+                       Respecting the roots, reaching for the stars
+                    </p>
+                    <div class="action__btns">
+                        <button class="btn primary"><a href="contact.html"> Get in Touch</button></a>
+                        <button class="btn secondary"><a href="blog.html"> Blog</button></a>
+                    </div>
+                </div>
+            </div> 
+        </section>
+    </div>
+
+    <!-- JavaScript for Automatic Background Change -->
+    <script>
+        const images = [
+            "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1920&q=80", // Kerala
+            "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1920&q=80", // Tamil Nadu
+            "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80"  // Dubai
+        ];
+
+        let currentIndex = 0;
+        const heroWrapper = document.getElementById('hero-bg');
+
+        function changeWallpaper() {
+            heroWrapper.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${images[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        // Change every 7 seconds
+        setInterval(changeWallpaper, 7000);
+        changeWallpaper();
+    </script>
+</body>
+</html>
